@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ner-spacy-es
+  name: ner-spacy-es
+spec:
+  ports:
+  - name: "8000"
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: ner-spacy-es
+status:
+  loadBalancer: {}

@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: ner-spacy-es
+  name: ner-spacy-es
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ner-spacy-es
+    spec:
+      containers:
+      - env:
+        - name: LANGUAGE
+          value: en
+        image: maven-taln.upf.edu/ner_spacy_es:20190701
+        name: ner-spacy-es
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            cpu: "1"
+            memory: "4Gi"
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+      restartPolicy: Always
+status: {}
