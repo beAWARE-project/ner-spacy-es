@@ -4,7 +4,7 @@ node ('beaware-jenkins-slave') {
 		autoCancelled = true
 		return
 	}
-        git(url: 'https://github.com/beAWARE-project/ner-spacy-es.git, branch: 'master')
+        git(url: 'https://github.com/beAWARE-project/ner-spacy-es.git', branch: 'master')
         sh 'git submodule init'
         sh 'git submodule update'
     }
