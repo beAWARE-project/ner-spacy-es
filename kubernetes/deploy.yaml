@@ -16,7 +16,7 @@ spec:
       containers:
       - env:
         - name: LANGUAGE
-          value: en
+          value: es
         image: maven-taln.upf.edu/ner_spacy_es:20190701
         name: ner-spacy-es
         ports:
